@@ -1,16 +1,14 @@
 import { Button, Host, Text } from "@expo/ui/jetpack-compose";
-import { Link } from "expo-router";
+import { router } from "expo-router";
 import { View } from "react-native";
 
 const HomeScreen = () => (
   <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-    <Link href="/repro">
-      <Host matchContents>
-        <Button>
-          <Text>Go to Repro</Text>
-        </Button>
-      </Host>
-    </Link>
+    <Host matchContents>
+      <Button onClick={() => router.navigate("/repro")}>
+        <Text>Go to Repro</Text>
+      </Button>
+    </Host>
   </View>
 );
 
